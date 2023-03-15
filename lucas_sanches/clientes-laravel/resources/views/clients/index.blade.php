@@ -17,13 +17,18 @@
                 @foreach($clients as $client)
                     <tr>
 
-                        <th scope="row">{{ $client ->id }}</th>
-                        <th scope="row">
+                        <td scope="row">{{ $client ->id }}</td>
+                        <td scope="row">
                             <a href="{{ route('clients.show',$client) }}">
                                 {{ $client ->nome }}
                             </a>
-                            </th>
-                        <th scope="row">{{ $client ->endereco }}</th>
+                            </td>
+                        <td scope="row">{{ $client ->endereco }}</td>
+                        <td>
+                            <a href="{{route('clients.edit',$client)}}" class="btn btn-primary">
+                                Editar
+                            </a>
+                        </td>
 
                     </tr>
                 @endforeach
