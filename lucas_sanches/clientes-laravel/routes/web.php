@@ -21,12 +21,13 @@ Route::get ('/clients/{id}/edit', [ClientController::class, 'edit'])->name('clie
 
 
 Route::post('/clients', [ClientController::class, 'store'])-> name('clients.store');
-
-Route::get ('/produtos', [ClientController::class, 'index'])-> name('produtos.index');
-Route::get('/produtos/create',[ClientController::class,'create'])->name('produtos.create');
-Route::get ('/produtos/{id}', [ClientController::class, 'show'])->name('produtos.show');
-Route::post('/produtos', [ClientController::class, 'store'])-> name('produtos.store');
-
-
 Route::put('/clients/{id}',[ClientController::class,'update'])->name('clients.update');
+Route::delete('/clients/{id}',[ClientController::class,'destroy'])->name('clients.destroy');;
 
+
+// Route::get ('/produtos', [ClientController::class, 'index'])-> name('produtos.index');
+// Route::get('/produtos/create',[ClientController::class,'create'])->name('produtos.create');
+// Route::get ('/produtos/{id}', [ClientController::class, 'show'])->name('produtos.show');
+// Route::post('/produtos', [ClientController::class, 'store'])-> name('produtos.store');
+
+//Route::resource('/clients',ClientController::class);

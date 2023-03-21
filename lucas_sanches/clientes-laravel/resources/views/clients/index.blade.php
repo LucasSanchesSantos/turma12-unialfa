@@ -16,7 +16,6 @@
             <tbody>
                 @foreach($clients as $client)
                     <tr>
-
                         <td scope="row">{{ $client ->id }}</td>
                         <td scope="row">
                             <a href="{{ route('clients.show',$client) }}">
@@ -28,6 +27,12 @@
                             <a href="{{route('clients.edit',$client)}}" class="btn btn-primary">
                                 Editar
                             </a>
+                            <form action="{{route('clients.destroy',$client)}}" method="POST">
+                                @method('DELETE')   
+                                {{-- esse @method delete faz com que o formulário seja enviado como delete --}}
+                                @csrf
+                                <button class="btn btn-danger" type="submit" onclick="return confirm('tem certeza qeu deseja apagar')">Apagar</button>
+                            </form>
                         </td>
 
                     </tr>
